@@ -2,9 +2,9 @@ import graphql from 'babel-plugin-relay/macro'
 import { useLazyLoadQuery } from "react-relay"
 import { AppUsersQuery } from "./__generated__/AppUsersQuery.graphql";
 import UserCard from "./Card/UserCard"
+import useStyles from './Styles/useStyles'
 import Grid from "@material-ui/core/Grid"
 import { Container } from "@material-ui/core"
-import useStyles from './Styles/useStyles'
 
 const query = graphql`
   query AppUsersQuery {

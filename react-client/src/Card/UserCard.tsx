@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import useStyles from "../Styles/useStyles"
+import { motion } from "framer-motion"
 import { Typography } from '@material-ui/core'
 import Grid from "@material-ui/core/Grid"
 import Box from "@material-ui/core/Box"
-import useStyles from "../Styles/useStyles"
-import { motion } from "framer-motion"
 import EmailIcon from '@mui/icons-material/Email';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import Visibility from '@mui/icons-material/Visibility';
