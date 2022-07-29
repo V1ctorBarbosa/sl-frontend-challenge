@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "dependencies": {
     "@chakra-ui/react": "^1.7.0",
-    "@emotion/react": "^11",
-    "@emotion/styled": "^11",
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
+    "@mui/icons-material": "^5.8.4",
+    "@mui/lab": "^5.0.0-alpha.92",
+    "@mui/material": "^5.9.2",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -12,19 +17,34 @@
     "@types/node": "^16.11.7",
     "@types/react": "^17.0.34",
     "@types/react-dom": "^17.0.11",
-    "framer-motion": "^4",
+    "framer-motion": "4.1.17",
+    "isomorphic-fetch": "^3.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-intersection-observer": "^9.4.0",
     "react-query": "^3.32.2",
+    "react-relay": "^14.0.0",
     "react-scripts": "4.0.3",
+    "relay-runtime": "^14.0.0",
     "typescript": "^4.4.4",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "yarn run relay && react-scripts start",
+    "build": "yarn run relay && react-scripts build",
+    "relay": "yarn run relay-compiler",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "relay": {
+    "src": "./src/",
+    "schema": "../graphql-server/src/schema.graphql",
+    "language": "typescript",
+    "exclude": [
+      "**/node_modules/**",
+      "**/__mocks__/**",
+      "**/__generated__/**"
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -43,5 +63,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/isomorphic-fetch": "^0.0.36",
+    "@types/react-relay": "^13.0.2",
+    "@types/relay-runtime": "^13.0.3",
+    "babel-plugin-relay": "^14.0.0",
+    "graphql": "^16.5.0",
+    "relay-compiler": "^14.0.0"
   }
 }
